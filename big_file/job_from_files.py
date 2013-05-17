@@ -46,6 +46,7 @@ def post_assigns(tc):
     assigns_packages = load_assigns()
     for i, package in enumerate(assigns_packages):
         print i * APACK_SIZE,
+        sys.stdout.flush()
         wc(tc, tc.post_assigned_labels(package))
 
 
