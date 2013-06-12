@@ -54,7 +54,7 @@ class RowAnonymizer(fieldsAnonymizers: List[FieldAnonymizerBase], separator: Str
 object DataAnonimizer extends App {
   val fname = args(0)
   val out = new PrintWriter(args(1))
-  val rowAnonymizer = new RowAnonymizer(List(new FieldAnonymizer("o"), new FieldAnonymizer("w"), new ShortenenFieldAnonymizer(1)))
+  val rowAnonymizer = new RowAnonymizer(List(new FieldAnonymizer("w"), new FieldAnonymizer("o"), new ShortenenFieldAnonymizer(1)))
   for(line <- Source.fromFile(fname).getLines()) {
     out.println(rowAnonymizer.anonymizeRow(line))
   }
